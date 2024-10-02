@@ -1,0 +1,18 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import GyroDriveBase
+from pybricks.tools import wait, StopWatch
+
+hub = PrimeHub()
+direito = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+esquerdo = Motor(Port.F)
+garra_esq = Motor(Port.D)
+garra_dir = Motor(Port.C)
+mover = GyroDriveBase(direito, esquerdo, 54, 76)
+
+def andar(distancia, velocidade=270):
+    mover.settings(velocidade, 900, 240, 300)
+    mover.straight(distancia*10)
+
+andar(20)
