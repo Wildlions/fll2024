@@ -16,7 +16,7 @@ mover.use_gyro(True)
 #Definições
 
 def andar(distancia, velocidade = 300):
-    mover.settings(velocidade, 900, 240, 300)
+    mover.settings(velocidade, 900, 250, 300)
     mover.straight(distancia*10)
 
 def curva(graus):
@@ -47,3 +47,17 @@ andar(15)
 andar(-15)
 curva(-25)
 andar(-60)
+
+
+#lançamento1 
+curva(-39)
+andar(13)
+curva(52)
+garraD(4001, 500)
+andar(30)
+garraD(400, 1450)
+curva(61)
+garraD(-4000, 500)
+andar(-20)
+curva(80)
+andar(-45)
