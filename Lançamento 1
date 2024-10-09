@@ -16,48 +16,62 @@ mover.use_gyro(True)
 #Definições
 
 def andar(distancia, velocidade = 300):
-    mover.settings(velocidade, 900, 250, 300)
+    mover.settings(velocidade, 900, 230, 300)
     mover.straight(distancia*10)
 
 def curva(graus):
+    mover.settings(50, 600, 130, 200)
     mover.turn(graus)
-
+    
 def garraD(velocidade, tempo):
     garra_dir.run_time(velocidade, tempo)
 
 def garraE(velocidade, tempo):
     garra_esq.run_time(velocidade, tempo)
+    
+def esperar(tempo):
+    mover.stop()
+    wait(tempo*1000)
+    mover.stop()
 
 
 
+#lançamento 1 (pegar objetos na mesa)
 
-#Missão 09.1
+andar(-40)
+curva(36)
+andar(-25)
+curva(35)
+andar(-20)
+andar(20)
+curva(-35)
+andar(25)
+curva(-36)
+andar(40)
 
-andar(55)
-andar(-57)
-mover.stop()
-wait(10000)
-mover.stop()
+#Lançamento 2 (missão do barco e do plankton)
 
-#Missão 09.2
-
-andar(58)
-curva(25)
-andar(15)
-andar(-15)
-curva(-25)
-andar(-60)
-
-
-#lançamento1 
+'''
+garraE(4000, 1500)
 curva(-39)
-andar(13)
-curva(52)
+andar(21)
+curva(55)
 garraD(4001, 500)
 andar(30)
 garraD(400, 1450)
-curva(61)
+curva(43)
 garraD(-4000, 500)
-andar(-20)
+andar(-17)
 curva(80)
-andar(-45)
+andar(-20)
+andar(55)
+esperar(7)
+
+#lançamento 3 (missao do polvo)
+
+curva(-63)
+andar(48)
+curva(20)
+andar(21)
+andar(-25)
+'''
