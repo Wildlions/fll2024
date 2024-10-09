@@ -34,17 +34,17 @@ def esperar(tempo):
     wait(tempo*1000)
     mover.stop()
 
-
+  
 
 #lançamento 1 (pegar objetos na mesa)
 
 andar(-40)
 curva(36)
 andar(-25)
-curva(35)
+curva(37)
 andar(-20)
 andar(20)
-curva(-35)
+curva(-37)
 andar(25)
 curva(-36)
 andar(40)
@@ -67,7 +67,8 @@ andar(-20)
 andar(55)
 esperar(7)
 
-#lançamento 3 (missao do polvo)
+#missao 3 (missao da criatura desconhecida vulgo lula)
+
 
 curva(-63)
 andar(48)
@@ -75,3 +76,6 @@ curva(20)
 andar(21)
 andar(-25)
 '''
+
+
+
