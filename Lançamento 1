@@ -37,21 +37,25 @@ def esperar(tempo):
   
 
 #lançamento 1 (pegar objetos na mesa)
-
-andar(-40)
-curva(36)
-andar(-25)
-curva(37)
+'''
+andar(-10)
+curva(-30)
+andar(-30)
+curva(35)
+andar(-15)
+curva(-30)
+andar(-15)
+curva(70)
 andar(-20)
 andar(20)
-curva(-37)
-andar(25)
-curva(-36)
-andar(40)
-
-#Lançamento 2 (missão do barco e do plankton)
+curva(-70)
+andar(60)
+esperar(15)
 
 '''
+#Lançamento 2 (missão do barco e do plankton)
+
+
 garraE(4000, 1500)
 curva(-39)
 andar(21)
@@ -62,20 +66,15 @@ garraD(400, 1450)
 curva(43)
 garraD(-4000, 500)
 andar(-17)
-curva(80)
-andar(-20)
-andar(55)
-esperar(7)
+curva(-25)
+andar(30)
+curva(45)
+andar(1)
+garraE(-3000, 2000)
+curva(-75)
+andar(-30)
+curva(105)
+andar(-40)
 
+#missao 3 (missao da criatura desconhecida vulgo lula)
 #missao 9 (missao da criatura desconhecida vulgo lula)
-
-
-curva(-63)
-andar(48)
-curva(20)
-andar(21)
-andar(-25)
-'''
-
-
-
