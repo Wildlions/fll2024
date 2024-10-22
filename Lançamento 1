@@ -12,8 +12,9 @@ garra_esq = Motor(Port.D, Direction.COUNTERCLOCKWISE)
 garra_dir = Motor(Port.C)
 mover = DriveBase(esquerdo, direito, 54, 76)
 mover.use_gyro(True)
-
-#Definições
+numero = 1
+lancamento = 1
+hub.system.set_stop_button(Button.BLUETOOTH)
 
 def andar(distancia, velocidade = 300):
     mover.settings(velocidade, 900, 230, 300)
@@ -34,47 +35,69 @@ def esperar(tempo):
     wait(tempo*1000)
     mover.stop()
 
-  
+while numero == 1:
+    hub.display.number(lancamento)
+    botao = hub.buttons.pressed()
+    
+    
+    if Button.LEFT in botao:
+        if lancamento == 1:
+            lancamento = 1
+            hub.display.number(lancamento)
+        else:
+            lancamento -= 1
+            hub.display.number(lancamento)
+            wait(1000)
+    
+    if Button.RIGHT in botao:
+        if lancamento == 99:
+            lancamento = 1
+        else:
+            lancamento += 1
+            hub.display.number(lancamento)
+            wait(1000)
 
-#lançamento 1 (pegar objetos na mesa)
+    
+    if Button.CENTER in botao:
 
-andar(-10)
-curva(-30)
-andar(-30)
-curva(35)
-andar(-17)
-curva(-34)
-andar(-15)
-curva(80)
-andar(-20)
-andar(20)
-curva(-80)
-andar(60)
-esperar(15)
+        if lancamento == 1:
 
+            andar(-10)
+            curva(-30)
+            andar(-30)
+            curva(35)
+            andar(-17)
+            curva(-34)
+            andar(-15)
+            curva(90)
+            andar(-20)
+            andar(20)
+            curva(-80)
+            andar(60)
+            mover.stop()
 
-#Lançamento 2 (missão do barco e do plankton)
+        if lancamento == 2:
 
-
-garraE(4000, 1500)
-curva(-39)
-andar(21)
-curva(50)
-garraD(4000, 530)
-andar(30)
-garraD(700, 1600)
-curva(45)
-garraD(-4000, 500)
-andar(-17)
-curva(-25)
-garraD(4000, 1000)
-andar(33)
-curva(63)
-garraE(-3000, 1800)
-curva(-75)
-andar(-30)
-curva(105)
-andar(-40)
-andar(5)
-curva(20)
-andar(50)
+            garraE(4000, 1500)
+            curva(-39)
+            andar(21)
+            curva(50)
+            garraD(4000, 530)
+            andar(30)
+            garraD(700, 1600)
+            curva(45)
+            garraD(-4000, 500)
+            andar(-17)
+            curva(-25)
+            garraD(4000, 1000)
+            andar(33)
+            curva(63)
+            garraE(-3000, 1800)
+            curva(-75)
+            andar(-30)
+            curva(105)
+            andar(-40)
+            andar(5)
+            curva(20)
+            andar(50)
+            mover.stop()
