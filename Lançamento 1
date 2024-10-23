@@ -36,29 +36,42 @@ def esperar(tempo):
     mover.stop()
 
 while numero == 1:
+
     hub.display.number(lancamento)
     botao = hub.buttons.pressed()
     
-    
-    if Button.LEFT in botao:
-        if lancamento == 1:
-            lancamento = 1
+    if Button.LEFT in botao: 
+
+        if lancamento == 0:
+
+            lancamamento = 0
             hub.display.number(lancamento)
+
         else:
+
             lancamento -= 1
             hub.display.number(lancamento)
-            wait(1000)
+            wait(250)
     
     if Button.RIGHT in botao:
+
         if lancamento == 99:
-            lancamento = 1
+
+            lancamento = 99
+
         else:
+
             lancamento += 1
             hub.display.number(lancamento)
-            wait(1000)
+            wait(250)
 
-    
     if Button.CENTER in botao:
+        
+        wait(300)
+
+        if lancamento == 0:
+
+            andar(10000)
 
         if lancamento == 1:
 
@@ -70,10 +83,11 @@ while numero == 1:
             curva(-34)
             andar(-15)
             curva(90)
-            andar(-20)
-            andar(20)
+            andar(-14.5)
+            curva(-180)
+            andar(-15)
             curva(-80)
-            andar(60)
+            andar(-60)
             mover.stop()
 
         if lancamento == 2:
@@ -81,18 +95,19 @@ while numero == 1:
             garraE(4000, 1500)
             curva(-39)
             andar(21)
-            curva(50)
+            curva(55)
             garraD(4000, 530)
             andar(30)
-            garraD(700, 1600)
+            garraD(700, 1300)
             curva(45)
             garraD(-4000, 500)
             andar(-17)
             curva(-25)
             garraD(4000, 1000)
-            andar(33)
+            andar(36)
             curva(63)
-            garraE(-3000, 1800)
+            andar(-5)
+            garraE(-3000, 1700)
             curva(-75)
             andar(-30)
             curva(105)
