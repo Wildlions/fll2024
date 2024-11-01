@@ -16,7 +16,7 @@ mover.use_gyro(True)
 #Definições
 
 def andar(distancia, velocidade = 300):
-    mover.settings(velocidade, 900, 250, 300)
+    mover.settings(velocidade, 1200, 550, 600)
     mover.straight(distancia*10)
 
 def curva(graus):
@@ -35,20 +35,17 @@ def esperar (tempo):
 
 
 curva(10)
-andar(73)
-garraE(-4000, 1265)
-curva(-86)
-andar(17)
-garraE(4000, 590)
-curva(155)
-andar(5)
-curva(-15)
-andar(-2)
-curva(-4)
-garraE(-4000, 550)
-andar(-5)
-garraE(-4000, 500)
-andar(-12)
-andar(13)
-curva(130)
-andar(75)
+garraE(-4000, 1309)
+andar(53.5)
+curva(-64)
+andar(14.6)
+garraE(4000, 804)
+garraE(-4000, 250)
+curva(190)
+andar(14)
+curva(-112)
+garraE(-4000, 740)
+garraE(4000, 470)
+andar(12)
+garraE(-4000, 770)
+andar(-77)
