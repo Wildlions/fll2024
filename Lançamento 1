@@ -42,9 +42,9 @@ while numero == 1:
     
     if Button.LEFT in botao: 
 
-        if lancamento == 0:
+        if lancamento == -99:
 
-            lancamamento = 0
+            lancamamento = -99
             hub.display.number(lancamento)
 
         else:
@@ -68,6 +68,37 @@ while numero == 1:
     if Button.CENTER in botao:
         
         wait(300)
+
+        if lancamento == -2:
+
+            andar(89.5)
+            curva(94)
+            andar(-4.5)
+            garraE(-600, 2400)
+            andar(-3)
+            garraE(4000, 1000)
+            andar(2.5)
+            curva(5)
+            esperar(1)
+            garraE(501, 2000)
+            andar(5.5)
+            curva(188)
+            andar(-5.7)
+            garraE(-700, 2700)
+            curva(-10)
+            garraE(700, 2000)
+            curva(-99)
+            garraD(-500, 1700)
+            andar(31.5)
+            curva(100)
+            andar(17.5)
+            andar(-15)
+            curva(-78)
+            andar(65)
+        
+        if lancamento == -1:
+
+            wait(10)
 
         if lancamento == 0:
 
@@ -120,18 +151,20 @@ while numero == 1:
         if lancamento == 3:
 
             andar(72)
-            garraE(-3000, 700)
+            garraE(-3000,900)
             curva(-100)
             andar(42)
-            curva(10)
             andar(-5)
-            curva(45)
-            andar(20)
-            garraD(-3000, 1500)
-            garraD(3000, 1400)
+            curva(55)
+            andar(15)
+            garraD(-3000, 3000)
+            andar(5)
+            garraD(3000, 2900)
             andar(-8)
-            curva(180)
-            andar(21)
-            curva(45)
+            curva(-180)
+            andar(15)
+            curva(-55)
+            andar(30)
+            curva(90)
             andar(64)
             mover.stop()
