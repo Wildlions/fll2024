@@ -69,6 +69,26 @@ while numero == 1:
         
         wait(300)
 
+        if lancamento == -3:
+
+            curva(10)
+            garraE(-4000, 1600)
+            garraE(350, 1070)
+            andar(47.5)
+            curva(-56)
+            andar(17)
+            garraE(350, 1070)
+            garraE(-4000, 250)
+            curva(190)
+            andar(14)
+            curva(-117)
+            garraE(-4000, 740)
+            garraE(4000, 480)
+            andar(22)
+            garraE(-4000, 770)
+            andar(-77)
+            mover.stop()
+
         if lancamento == -2:
 
             andar(89.5)
@@ -95,6 +115,9 @@ while numero == 1:
             andar(-15)
             curva(-78)
             andar(65)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
+            mover.stop()
         
         if lancamento == -1:
 
@@ -114,10 +137,13 @@ while numero == 1:
             andar(10)
             curva(45)
             andar(50)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 0:
 
+            print('Bateria:', hub.battery.voltage())
             andar(10000)
 
         if lancamento == 1:
@@ -135,6 +161,8 @@ while numero == 1:
             andar(-15)
             curva(-80)
             andar(-60)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 2:
@@ -162,6 +190,8 @@ while numero == 1:
             andar(5)
             curva(20)
             andar(50)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 3:
@@ -174,14 +204,15 @@ while numero == 1:
             curva(55)
             andar(15)
             garraD(-3000, 3000)
-            andar(8)
+            andar(9)
             garraD(3000, 3500)
-            andar(-10)
+            andar(-6)
             curva(-180)
             andar(15)
-            curva(-90)
+            curva(-130)
             andar(30)
             curva(90)
             andar(64)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
             mover.stop()
-
