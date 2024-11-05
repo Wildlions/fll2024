@@ -87,6 +87,8 @@ while numero == 1:
             andar(22)
             garraE(-4000, 770)
             andar(-77)
+            print('Bateria:', hub.battery.voltage)
+            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == -2:
