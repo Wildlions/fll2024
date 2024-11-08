@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -88,7 +89,6 @@ while numero == 1:
             garraE(-4000, 770)
             andar(-77)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == -2:
@@ -118,7 +118,6 @@ while numero == 1:
             curva(-78)
             andar(65)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
         
         if lancamento == -1:
@@ -140,7 +139,6 @@ while numero == 1:
             curva(45)
             andar(50)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 0:
@@ -164,7 +162,6 @@ while numero == 1:
             curva(-80)
             andar(-60)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 2:
@@ -173,9 +170,9 @@ while numero == 1:
             curva(-39)
             andar(21)
             curva(49)
-            garraD(4000, 530)
+            garraD(4000, 550)
             andar(27)
-            garraD(700, 1300)
+            garraD(700, 1650)
             curva(45)
             garraD(-4000, 500)
             andar(-17)
@@ -183,7 +180,7 @@ while numero == 1:
             garraD(4000, 1000)
             andar(36)
             curva(63)
-            andar(-2)
+            andar(-5)
             garraE(-3000, 1700)
             curva(-75)
             andar(-30)
@@ -193,7 +190,6 @@ while numero == 1:
             curva(20)
             andar(50)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
 
         if lancamento == 3:
@@ -216,5 +212,4 @@ while numero == 1:
             curva(90)
             andar(64)
             print('Bateria:', hub.battery.voltage)
-            print('Tempo:', tempo/1000)
             mover.stop()
