@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -92,56 +93,41 @@ while numero == 1:
 
         if lancamento == -2:
 
-            andar(89.5)
-            curva(94)
-            andar(-4.5)
-            garraE(-600, 2400)
-            andar(-3)
-            garraE(4000, 1000)
-            andar(2.5)
-            curva(5)
-            esperar(1)
-            garraE(501, 2000)
-            andar(5.5)
-            curva(188)
-            andar(-5.7)
-            garraE(-700, 2700)
-            curva(-10)
-            garraE(700, 2000)
-            curva(-99)
-            garraD(-500, 1700)
-            andar(31.5)
-            curva(100)
-            andar(17.5)
-            andar(-15)
-            curva(-78)
             andar(65)
+            curva(-38)
+            andar(15)
+            #fim da missão do tubarão
+            andar(-25)
+            curva(-40)
+            andar(9)
+            curva(-102)
+            andar(-34)
+            mover.stop()
+            andar(5)
+            curva(-90)
+            andar(-4)
+            garraE(-4000, 1500)
+            garraE(4000, 1400)
+            curva(90)
+            andar(40)
+            curva(20)
+            andar(20)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
         
         if lancamento == -1:
 
-            curva(53)
-            andar(-62)
-            andar(25)
-            curva(-81)
-            andar(-50)
-            curva(20)
-            andar(53)
-            curva(-151)
-            garraE(-4000, 1500)
-            andar(23)
-            garraE(4000, 850)
-            curva(169)
-            andar(-27)
-            andar(10)
-            curva(45)
-            andar(50)
+            andar(-67)
+            curva(-90)
+            andar(-12)
+            curva(-93)
+            andar(-63)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
         if lancamento == 0:
 
+            mover.use_gyro(False)
             print('Bateria:', hub.battery.voltage())
             andar(10000)
 
