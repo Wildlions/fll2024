@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -69,6 +70,16 @@ while numero == 1:
         
         wait(300)
 
+        if lancamento == -4:
+            
+            andar(-39)
+            curva(-49)
+            andar(-45)
+            curva(30)
+            andar(70)
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
+
         if lancamento == -3:
 
             curva(10)
@@ -92,35 +103,41 @@ while numero == 1:
 
         if lancamento == -2:
 
+
+            
             andar(65)
             curva(-38)
             andar(15)
             #fim da missão do tubarão
             andar(-25)
             curva(-40)
-            andar(9)
+            andar(8)
             curva(-102)
-            andar(-34)
+            andar(-42)
             mover.stop()
-            andar(5)
+            andar(10)
             curva(-90)
             andar(-4)
-            garraE(-4000, 1500)
-            garraE(4000, 1400)
+            garraE(-4000, 1535)
+            garraE(4000, 1550)
             curva(90)
             andar(40)
             curva(20)
-            andar(20)
+            andar(28)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
         
         if lancamento == -1:
-
+            
             andar(-67)
-            curva(-90)
+            curva(-88)
             andar(-12)
             curva(-93)
             andar(-63)
+            
+
+
+
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
