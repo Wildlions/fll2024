@@ -1,4 +1,3 @@
-
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -84,8 +83,8 @@ while numero == 1:
 
             curva(10)
             garraE(-4000, 1600)
-            garraE(350, 1070)
-            andar(48)
+            garraE(350, 1085)
+            andar(46)
             curva(-56)
             andar(19)
             garraE(350, 1070)
