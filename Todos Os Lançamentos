@@ -131,7 +131,8 @@ while numero == 1:
             andar(-12)
             curva(-93)
             andar(-72)
-            
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
 
 
 
