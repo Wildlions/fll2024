@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -83,19 +84,19 @@ while numero == 1:
 
             curva(10)
             garraE(-4000, 1600)
-            garraE(350, 1085)
+            garraE(350, 1050)
             andar(46)
-            curva(-56)
-            andar(19)
+            curva(-54)
+            andar(17.3)
             garraE(350, 1070)
-            garraE(-4000, 250)
-            curva(190)
+            garraE(-4000, 300)
+            curva(90)
             andar(14)
-            curva(-115)
-            garraE(-4000, 600)
-            andar(15)
-            garraE(-4000, 650)
-            andar(-68)
+            garraE(-4000, 640)
+            andar(23)
+            garraE(-4000, 450)
+            andar(-61)
+            garraE(-4000, 1200)
             curva(-45)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
@@ -144,8 +145,19 @@ while numero == 1:
             mover.use_gyro(False)
             print('Bateria:', hub.battery.voltage())
             andar(10000)
-
+        
         if lancamento == 1:
+
+            andar(110)
+            andar(-15)
+            curva(-12)
+            andar(35)
+            curva(50)
+            andar(45)
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
+            
+        if lancamento == 2:
 
             andar(-10)
             curva(-30)
@@ -163,7 +175,7 @@ while numero == 1:
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
-        if lancamento == 2:
+        if lancamento == 3:
 
             garraE(4000, 1500)
             curva(-35)
@@ -186,7 +198,7 @@ while numero == 1:
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
-        if lancamento == 3:
+        if lancamento == 4:
 
             andar(72)
             garraE(-3000,900)
