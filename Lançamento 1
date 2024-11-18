@@ -1,1 +1,8 @@
-
+            andar(110)
+            andar(-15)
+            curva(-12)
+            andar(35)
+            curva(50)
+            andar(45)
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
