@@ -1,3 +1,4 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -16,7 +17,7 @@ numero = 1
 lancamento = 1
 hub.system.set_stop_button(Button.BLUETOOTH)
 
-def andar(distancia, velocidade = 300):
+def andar(distancia, velocidade = 350):
     mover.settings(velocidade, 900, 230, 300)
     mover.straight(distancia*10)
 
@@ -90,11 +91,11 @@ while numero == 1:
 
             curva(10)
             garraE(-4000, 1600)
-            garraE(350, 1000)
+            garraE(357, 1000)
             andar(46)
-            curva(-55.8)
-            andar(17.1)
-            garraE(350, 1060)
+            curva(-55.6)
+            andar(15.5)
+            garraE(355, 1090)
             garraE(-4000, 650)
             curva(88)
             andar(14)
@@ -118,25 +119,14 @@ while numero == 1:
             curva(-38)
             andar(15)
             #fim da missão do tubarão
-            andar(-24)
-            curva(-35)
-            andar(8)
-            curva(-107)
-            andar(-42)
-            mover.stop()
-            andar(11)
-            curva(-93)
-            andar(-6)
-            garraE(-4000, 1600)
-            garraE(4000, 1550)
-            curva(90)
-            andar(10, 900)
-            curva(-35, 900)
-            andar(10, 900)
-            curva(60, 900)
-            andar(65, 900)
-            print('Bateria:', hub.battery.voltage())
-            mover.stop()
+            andar(-21)
+            curva(-31)
+            andar(5, 70)
+            curva(-15, 100)
+            andar(-7)
+            curva(-75)
+            andar(55, 900)
+            
 
         if lancamento == -2:
 
@@ -174,9 +164,9 @@ while numero == 1:
             
         if lancamento == 2:
 
-            andar(-10)
+            andar(-10, 400)
             curva(-30)
-            andar(-30)
+            andar(-30, 400)
             curva(35)
             andar(-17)
             curva(-34)
@@ -186,7 +176,7 @@ while numero == 1:
             curva(-180)
             andar(-15)
             curva(-75)
-            andar(-70)
+            andar(-70, 900)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
@@ -203,7 +193,7 @@ while numero == 1:
             curva(45)
             garraD(-700, 700)
             curva(-80)
-            andar(13)
+            andar(15)
             curva(86)
             andar(8)
             garraE(-3000, 2000)
@@ -213,20 +203,28 @@ while numero == 1:
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
-        if lancamento == 4:
+        if lancamento == 4: #missao nova do polvo
+            andar(60, 400)
+            curva(45, 250)
+            andar(23)
+            andar(-8)
 
+
+            
+
+        if lancamento == 5: #missao nova do coop
             garraD(4000, 1000)
-            andar(72)
+            andar(72, 400)
             garraE(3000, 650)
-            curva(-102)
-            andar(40.5)
-            andar(-13)
-            curva(32)
-            andar(7)
+            curva(-103)
+            andar(40.2)
+            andar(-8)
+            curva(55)
+            andar(5)
             garraD(-3000, 1000)
-            andar(18)
-            garraD(3000, 2000)
-            andar(-6)
+            andar(16)
+            garraD(2000, 2600)
+            andar(-8)
             curva(180)
             andar(7)
             curva(-50)  
