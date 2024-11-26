@@ -128,7 +128,7 @@ while numero == 1:
         if lancamento == -2:
 
             andar(-58, 400)
-            andar(62, 400)
+            andar(64, 400)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
         
@@ -138,7 +138,7 @@ while numero == 1:
             curva(-40)
             andar(-3, 400)
             curva(40)
-            andar(68, 400)
+            andar(70, 400)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
@@ -162,18 +162,17 @@ while numero == 1:
         if lancamento == 2:
 
             andar(-10, 400)
-            curva(-30)
+            curva(-30, 350)
             andar(-30, 400)
-            curva(35)
-            andar(-17)
-            curva(-34)
-            andar(-15)
-            curva(90)
-            andar(-14.5)
-            curva(-180)
-            andar(-15)
-            curva(-75)
-            andar(-70, 900)
+            curva(45, 350)
+            andar(-17, 400)
+            curva(-34, 350)
+            andar(-15, 400)
+            curva(73, 350)
+            andar(-18, 400)
+            andar(21, 400)
+            curva(-75, 350)
+            andar(70, 900)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
@@ -181,33 +180,38 @@ while numero == 1:
 
             garraE(4000, 1500)
             curva(-35)
-            andar(54, 200)
-            andar(-6, 200)
+            andar(54, 500)
+            andar(-6, 900)
             curva(74)
             garraD(4000, 550)
-            andar(16.8)
+            andar(18.2,450)
             garraD(700, 1600)
             curva(45)
             garraD(-700, 700)
             curva(-80)
             andar(15)
             curva(86)
-            andar(8)
-            garraE(-3000, 2000)
-            andar(-8)
+            andar(7)
+            garraE(-1500, 1500)
+            andar(-8, 900)
             curva(75)
-            andar(57)
+            andar(57, 900)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
         if lancamento == 4: #missao nova do polvo
+        
             andar(60, 400)
             curva(45, 250)
-            andar(23)
-            andar(-8)
-
-
-            
+            andar(21)
+            andar(-19)
+            curva(-37)
+            andar(35)
+            curva(55)
+            andar(14.8)
+            garraD(4000, 2000)
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
 
         if lancamento == 5: #missao nova do coop
             garraD(4000, 1000)
