@@ -1,4 +1,4 @@
             andar(-58, 400)
-            andar(62, 400)
+            andar(64, 400)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
