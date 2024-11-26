@@ -2,6 +2,6 @@
             curva(-40)
             andar(-3, 400)
             curva(40)
-            andar(68, 400)
+            andar(70, 400)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
