@@ -15,6 +15,8 @@ mover.use_gyro(True)
 numero = 1
 lancamento = 1
 hub.system.set_stop_button(Button.BLUETOOTH)
+sensor_cor = ColorSensor(Port.B)
+luz_refletida = sensor_cor.color(True)
 
 def andar(distancia, velocidade = 350):
     mover.settings(velocidade, 900, 230, 300)
@@ -34,6 +36,13 @@ def esperar(tempo):
     mover.stop()
     wait(tempo*1000)
     mover.stop()
+
+def estacionar():
+
+    while luz_refletida >= 35:
+
+        wait(10)
+
 
 while numero == 1:
 
@@ -68,6 +77,16 @@ while numero == 1:
     if Button.CENTER in botao:
         
         wait(300)
+
+        if lancamento == -6:
+           
+           andar(16, 50)
+           curva(-10)
+           garraD(4000, 1350)
+           andar(-17, 900)
+
+           print('Bateria:', hub.battery.voltage())
+           mover.stop()
 
         if lancamento == -5:
 
@@ -206,31 +225,24 @@ while numero == 1:
             andar(21)
             andar(-19)
             curva(-37)
-            andar(35)
-            curva(55)
-            andar(14.8)
-            garraD(4000, 2000)
+            andar(37)
+            curva(65)
+            andar(20)
+            garraD(4000, 1300)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
         if lancamento == 5: #missao nova do coop
-            garraD(4000, 1000)
-            andar(72, 400)
-            garraE(3000, 650)
-            curva(-103)
-            andar(40.2)
-            andar(-8)
-            curva(55)
-            andar(5)
-            garraD(-3000, 1000)
-            andar(16)
-            garraD(2000, 2600)
-            andar(-8)
-            curva(180)
-            andar(7)
-            curva(-50)  
-            andar(30)
-            curva(90)
-            andar(64)
+            
+            garraD(-4000, 1300)
+            luz_refletida = sensor_cor.reflection()
             print('Bateria:', hub.battery.voltage())
+            print('Luz Ambiente (em %):', luz_ambiente)
+            print('Luz Refletida (em %):', luz_refletida)
             mover.stop()
+
+        if lancamento == 6:
+
+            andar(70)
+            curva(28)
+            andar(13, 100)
