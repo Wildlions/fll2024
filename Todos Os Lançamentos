@@ -13,10 +13,13 @@ garra_dir = Motor(Port.C)
 mover = DriveBase(esquerdo, direito, 54, 76)
 mover.use_gyro(True)
 numero = 1
+numero2 = 0
 lancamento = 1
 hub.system.set_stop_button(Button.BLUETOOTH)
-sensor_cor = ColorSensor(Port.B)
-luz_refletida = sensor_cor.color(True)
+sensoresq = ColorSensor(Port.B)
+sensordir = ColorSensor(Port.E)
+Coresq = sensoresq.color()
+Cordir = sensordir.color()
 
 def andar(distancia, velocidade = 350):
     mover.settings(velocidade, 900, 230, 300)
@@ -37,12 +40,21 @@ def esperar(tempo):
     wait(tempo*1000)
     mover.stop()
 
-def estacionar():
+def bússola():
 
-    while luz_refletida >= 35:
+    numero2 = 1
 
-        wait(10)
+    while numero2 == 1:
 
+        Cordir = sensordir.color()
+
+        if Cordir == Color.WHITE:
+
+            numero2 = 0
+
+        else:
+
+            andar(1)
 
 while numero == 1:
 
@@ -219,27 +231,36 @@ while numero == 1:
             mover.stop()
 
         if lancamento == 4: #missao nova do polvo
-        
-            andar(60, 400)
-            curva(45, 250)
-            andar(21)
-            andar(-19)
-            curva(-37)
-            andar(37)
-            curva(65)
-            andar(20)
-            garraD(4000, 1300)
+
+            curva(-55)
+            andar(65, 900)
+            curva(40, 250)
+            andar(19, 900)
+            andar(-15, 900)
+            curva(-31)
+            andar(35.8, 900)
+            curva(53)
+            andar(7)
+            bússola()
+            andar(3.4)
+            garraD(4000, 1010)
+            andar(2)
+            wait(3000)
+            andar(-13, 900)
+            curva(-130, 900)
+            andar(-35, 900)
+            curva(75, 900)
+            andar(-31, 900)
+            curva(55)
+            andar(16)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
-        if lancamento == 5: #missao nova do coop
+
+        if lancamento == 5:
             
-            garraD(-4000, 1300)
-            luz_refletida = sensor_cor.reflection()
-            print('Bateria:', hub.battery.voltage())
-            print('Luz Ambiente (em %):', luz_ambiente)
-            print('Luz Refletida (em %):', luz_refletida)
-            mover.stop()
+            andar(25)
+            andar(-20)
 
         if lancamento == 6:
 
