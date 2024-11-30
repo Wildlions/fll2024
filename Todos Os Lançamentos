@@ -140,22 +140,41 @@ while numero == 1:
             mover.stop()
 
         if lancamento == -3:
-
-
-            #calibrado
-            andar(65)
-            curva(-38)
-            andar(15)
-            #fim da missão do tubarão
-            andar(-21)
-            curva(-31)
-            andar(5, 70)
-            curva(-15, 100)
-            andar(-7)
-            curva(-75)
-            andar(55, 900)
             
 
+            
+            #calibrado
+            andar(69)
+            curva(-42)
+            andar(15)
+            #fim da missão do tubarão
+            andar(-23.5)
+            curva(-40)
+            andar(8, 70)
+            curva(-15, 100)
+            andar(-4)
+            curva(-90)
+            andar(-60)
+            andar(10)
+            curva(-82)
+            andar(-9.5)
+            garraE(-4000, 1300)
+            curva(6.8)
+            andar(4)
+            garraE(-4000, 900)
+            garraE(4000, 1000)
+            curva(85)
+            andar(33.5)
+            garraE(-4000, 1000)
+            curva(-93.8)
+            andar(15)
+            garraE(100, 5000 )
+
+            
+
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
+            
         if lancamento == -2:
 
             andar(-58, 400)
@@ -282,7 +301,7 @@ while numero == 1:
             andar(-18, 700)
             curva(-40)
             andar(-82, 900)
-        
+
 
         if lancamento == 6:
 
