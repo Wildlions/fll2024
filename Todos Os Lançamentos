@@ -1,4 +1,3 @@
-
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
@@ -58,9 +57,13 @@ def bússola():
 
             andar(1)
 
-async def curva_andando(distancia, graus):
+def task1(distancia):
 
-    await multitask(andar(distancia), curva(graus),race=False)
+    andar(distancia, velocidade=300)
+
+def task2(graus):
+
+    curva(graus)
 
 while numero == 1:
 
@@ -96,18 +99,7 @@ while numero == 1:
         
         wait(300)
 
-        if lancamento == -6:
-           
-           andar(16, 50)
-           curva(-10)
-           garraD(4000, 1350)
-           andar(-17, 900)
-
-           print('Bateria:', hub.battery.voltage())
-           mover.stop()
-
-        if lancamento == -5:
-
+        if lancamento == -4:
 
             curva(46)
             andar(-70, 910)
@@ -118,38 +110,12 @@ while numero == 1:
             andar(-50)
             curva(10)
             andar(10,1000)
-            curva(180)
-            andar(35, 900)
-            print('Bateria:', hub.battery.voltage())
-            mover.stop()
-
-        if lancamento == -4:
-
-            curva(10)
-            garraE(-4000, 1600)
-            garraE(357, 1090)
-            andar(45.8)
-            curva(-54.7)
-            andar(17)
-            garraE(355, 1070)
-            garraE(-4000, 650)
-            curva(86.5)
-            andar(14)
-            garraE(-4000, 700)
-            andar(-15)
-            garraE(-4000, 600)
-            curva(-15)
-            andar(5)
-            curva(35)
-            garraE(-2000, 300)
+            curva(180, 900)
+            andar(45, 900)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
         if lancamento == -3:
-            
-
-            
-
             
             #calibrado
             andar(69)
@@ -175,18 +141,18 @@ while numero == 1:
             andar(-5)
             curva(75)
             andar(33.5)
-            garraE(-4000, 1000)
+            garraE(-4000, 900)
             curva(-63)
             andar(14)
             mover.stop()
             andar(-4.5)
-            garraE(300, 5000)
-            garraE(-200, 4000)
-            curva(-60)
-            andar(-60)
+            garraE(400, 3000)
+            garraE(-500, 2000)
+            curva(-60, 900)
+            andar(-7000   , 900)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
-            
+
         if lancamento == -2:
 
             andar(-58, 400)
@@ -211,23 +177,34 @@ while numero == 1:
             andar(10000)
         
         if lancamento == 1:
-
-            run_task(curva_andando(50, 45))
+            curva(-5)
+            andar(52)
+            curva(-4)
+            andar(60)
+            andar(-15, 500)
+            curva(-28)
+            andar(17, 900)
+            curva(35, 500)
+            andar(27, 900)
+            curva(40, 900)
+            andar(50, 900)
+            
+            
             print('Bateria:', hub.battery.voltage())
             mover.stop()
             
         if lancamento == 2:
 
-            andar(-10, 400)
+            andar(-10, 600)
             curva(-30, 350)
-            andar(-30, 400)
+            andar(-30, 600)
             curva(45, 350)
-            andar(-17, 400)
+            andar(-17, 600)
             curva(-34, 350)
-            andar(-15, 400)
+            andar(-15, 600)
             curva(73, 350)
-            andar(-18, 400)
-            andar(21, 400)
+            andar(-18, 600)
+            andar(21, 900)
             curva(-75, 350)
             andar(70, 900)
             print('Bateria:', hub.battery.voltage())
@@ -237,20 +214,20 @@ while numero == 1:
 
             garraE(4000, 1500)
             curva(-35)
-            andar(54, 500)
+            andar(54, 900)
             andar(-6, 900)
             curva(74)
             garraD(4000, 550)
-            andar(18.2,450)
+            andar(19,550)
             garraD(700, 1600)
             curva(45)
             garraD(-700, 700)
             curva(-80)
-            andar(15)
+            andar(15, 500)
             curva(86)
             andar(7)
             garraE(-1500, 1500)
-            andar(-8, 900)
+            andar(-10, 900)
             curva(75)
             andar(57, 900)
             print('Bateria:', hub.battery.voltage())
