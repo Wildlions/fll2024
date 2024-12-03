@@ -1,8 +1,9 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch, multitask
+from pybricks.tools import wait, StopWatch, multitask, run_task
 
 tempo = StopWatch()
 hub = PrimeHub()
@@ -28,6 +29,7 @@ def andar(distancia, velocidade = 350):
 def curva(graus, velocidade = 200):
     mover.settings(50, 600, 130, velocidade)
     mover.turn(graus)
+
     
 def garraD(velocidade, tempo):
     garra_dir.run_time(velocidade, tempo)
@@ -55,6 +57,10 @@ def bússola():
         else:
 
             andar(1)
+
+async def curva_andando(distancia, graus):
+
+    await multitask(andar(distancia), curva(graus),race=False)
 
 while numero == 1:
 
@@ -143,6 +149,8 @@ while numero == 1:
             
 
             
+
+            
             #calibrado
             andar(69)
             curva(-42)
@@ -156,22 +164,26 @@ while numero == 1:
             curva(-90)
             andar(-60)
             andar(10)
-            curva(-82)
+            curva(-73) 
             andar(-9.5)
             garraE(-4000, 1300)
-            curva(6.8)
+            curva(-5)
             andar(4)
             garraE(-4000, 900)
+            curva(-10)
             garraE(4000, 1000)
-            curva(85)
+            andar(-5)
+            curva(75)
             andar(33.5)
             garraE(-4000, 1000)
-            curva(-93.8)
-            andar(15)
-            garraE(100, 5000 )
-
-            
-
+            curva(-63)
+            andar(14)
+            mover.stop()
+            andar(-4.5)
+            garraE(300, 5000)
+            garraE(-200, 4000)
+            curva(-60)
+            andar(-60)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
             
@@ -200,12 +212,7 @@ while numero == 1:
         
         if lancamento == 1:
 
-            andar(102)
-            andar(-20)
-            curva(-7.5)
-            andar(39)
-            curva(50)
-            andar(45)
+            run_task(curva_andando(50, 45))
             print('Bateria:', hub.battery.voltage())
             mover.stop()
             
