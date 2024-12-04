@@ -1,8 +1,9 @@
+
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch, multitask, run_task
+from pybricks.tools import wait, StopWatch, multitask
 
 tempo = StopWatch()
 hub = PrimeHub()
@@ -28,7 +29,6 @@ def andar(distancia, velocidade = 350):
 def curva(graus, velocidade = 200):
     mover.settings(50, 600, 130, velocidade)
     mover.turn(graus)
-
     
 def garraD(velocidade, tempo):
     garra_dir.run_time(velocidade, tempo)
@@ -56,14 +56,6 @@ def bússola():
         else:
 
             andar(1)
-
-def task1(distancia):
-
-    andar(distancia, velocidade=300)
-
-def task2(graus):
-
-    curva(graus)
 
 while numero == 1:
 
@@ -99,7 +91,18 @@ while numero == 1:
         
         wait(300)
 
-        if lancamento == -4:
+        if lancamento == -6:
+           
+           andar(16, 50)
+           curva(-10)
+           garraD(4000, 1350)
+           andar(-17, 900)
+
+           print('Bateria:', hub.battery.voltage())
+           mover.stop()
+
+        if lancamento == -5:
+
 
             curva(46)
             andar(-70, 910)
@@ -110,12 +113,36 @@ while numero == 1:
             andar(-50)
             curva(10)
             andar(10,1000)
-            curva(180, 900)
-            andar(45, 900)
+            curva(180)
+            andar(35, 900)
+            print('Bateria:', hub.battery.voltage())
+            mover.stop()
+
+        if lancamento == -4:
+
+            curva(10)
+            garraE(-4000, 1600)
+            garraE(357, 1090)
+            andar(45.8)
+            curva(-54.7)
+            andar(17)
+            garraE(355, 1070)
+            garraE(-4000, 650)
+            curva(86.5)
+            andar(14)
+            garraE(-4000, 700)
+            andar(-15)
+            garraE(-4000, 600)
+            curva(-15)
+            andar(5)
+            curva(35)
+            garraE(-2000, 300)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
         if lancamento == -3:
+            
+
             
             #calibrado
             andar(69)
@@ -123,36 +150,39 @@ while numero == 1:
             andar(15)
             #fim da missão do tubarão
             andar(-23.5)
-            curva(-40)
-            andar(8, 70)
+            curva(-37)
+            andar(8, 100)
             curva(-15, 100)
             andar(-4)
-            curva(-90)
+            curva(-93)
             andar(-60)
+            mover.stop()
             andar(10)
-            curva(-73) 
-            andar(-9.5)
+            curva(-88)
+            andar(-13)
             garraE(-4000, 1300)
-            curva(-5)
             andar(4)
             garraE(-4000, 900)
             curva(-10)
             garraE(4000, 1000)
-            andar(-5)
-            curva(75)
-            andar(33.5)
-            garraE(-4000, 900)
-            curva(-63)
-            andar(14)
+            curva(95)
+            andar(-15)
             mover.stop()
-            andar(-4.5)
-            garraE(400, 3000)
-            garraE(-500, 2000)
-            curva(-60, 900)
-            andar(-7000   , 900)
+            andar(48.7)
+            garraE(-4000, 1000)
+            curva(-93.8)
+            andar(19)
+            mover.stop()
+            andar(-5)
+            garraE(300, 1700)
+            andar(-10)
+
+
+            
+
             print('Bateria:', hub.battery.voltage())
             mover.stop()
-
+            
         if lancamento == -2:
 
             andar(-58, 400)
@@ -177,34 +207,28 @@ while numero == 1:
             andar(10000)
         
         if lancamento == 1:
-            curva(-5)
-            andar(52)
-            curva(-4)
-            andar(60)
-            andar(-15, 500)
-            curva(-28)
-            andar(17, 900)
-            curva(35, 500)
-            andar(27, 900)
-            curva(40, 900)
-            andar(50, 900)
-            
-            
+
+            andar(102)
+            andar(-20)
+            curva(-7.5)
+            andar(39)
+            curva(50)
+            andar(45)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
             
         if lancamento == 2:
 
-            andar(-10, 600)
+            andar(-10, 400)
             curva(-30, 350)
-            andar(-30, 600)
+            andar(-30, 400)
             curva(45, 350)
-            andar(-17, 600)
+            andar(-17, 400)
             curva(-34, 350)
-            andar(-15, 600)
+            andar(-15, 400)
             curva(73, 350)
-            andar(-18, 600)
-            andar(21, 900)
+            andar(-18, 400)
+            andar(21, 400)
             curva(-75, 350)
             andar(70, 900)
             print('Bateria:', hub.battery.voltage())
@@ -212,26 +236,9 @@ while numero == 1:
 
         if lancamento == 3:
 
-            garraE(4000, 1500)
             curva(-35)
-            andar(54, 900)
-            andar(-6, 900)
-            curva(74)
-            garraD(4000, 550)
-            andar(19,550)
-            garraD(700, 1600)
-            curva(45)
-            garraD(-700, 700)
-            curva(-80)
-            andar(15, 500)
-            curva(86)
-            andar(7)
-            garraE(-1500, 1500)
-            andar(-10, 900)
-            curva(75)
-            andar(57, 900)
-            print('Bateria:', hub.battery.voltage())
-            mover.stop()
+            andar(54, 500)
+            andar(-60, 900)
 
         if lancamento == 4: #missao nova do polvo
 
@@ -266,10 +273,14 @@ while numero == 1:
             garraE(-3000, 2000)
             garraE(3000, 750)
             andar(-10)
-            curva(-40)
-            andar(-26)
-            curva(40)
-            andar(-75)
+            curva(85)
+            andar(15)
+            curva(50)
+            andar(15)
+            curva(-30)
+            andar(15)
+            curva(10)
+            andar(60)
             print('Bateria:', hub.battery.voltage())
             mover.stop()
 
@@ -288,7 +299,10 @@ while numero == 1:
 
 
         if lancamento == 6:
-
+            
             andar(70)
             curva(28)
             andar(13, 100)
+            
+            
+
