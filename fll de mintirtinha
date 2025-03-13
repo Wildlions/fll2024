@@ -1,0 +1,128 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
+
+tempo = StopWatch()   
+hub = PrimeHub()
+direito = Motor(Port.A)
+esquerdo = Motor(Port.F, Direction.COUNTERCLOCKWISE)
+garra_esq = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+garra_dir = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+mover = DriveBase(esquerdo, direito, 54, 76)
+mover.use_gyro(True)
+numero = 1
+lancamento = 1
+hub.system.set_stop_button(Button.BLUETOOTH)
+
+direita1 = 1
+
+def andar(distancia, velocidade = 300):
+    mover.settings(velocidade, 900, 230, 300)
+    mover.straight(distancia*10)
+
+def curva(graus):
+    mover.settings(50, 600, 130, 200)
+    mover.turn(graus)
+    
+def garraD(velocidade, tempo):
+    garra_dir.run_time(velocidade, tempo)
+
+def garraE(velocidade, tempo):
+    garra_esq.run_time(velocidade, tempo)
+    
+def esperar(tempo):
+    mover.stop()
+    wait(tempo*1000)
+    mover.stop()
+
+while numero == 1:
+
+    hub.display.number(lancamento)
+    botao = hub.buttons.pressed()
+    
+    if Button.LEFT in botao: 
+
+        if lancamento == 0:
+
+            lancamamento = 0
+            hub.display.number(lancamento)
+
+        else:
+
+            lancamento -= 1
+            hub.display.number(lancamento)
+            wait(250)
+    
+    if Button.RIGHT in botao:
+
+        if lancamento == 99:
+
+            lancamento = 99
+
+        else:
+
+            lancamento += 1
+            hub.display.number(lancamento)
+            wait(250)
+
+    if Button.CENTER in botao:
+        
+        wait(300)
+
+        if lancamento == 0:
+
+            andar(10000)
+
+        if lancamento == 1:
+
+            andar(15)
+            curva(199)
+            andar(-40.5)
+            mover.curve(-72, -190)
+            garraD(7000, 2000)
+            andar(-70)
+
+        if lancamento == 2:
+
+            andar(63)
+            mover.curve(200, -45)
+            mover.curve(-270, 48)
+            andar(15)
+            andar(-5)
+            mover.curve(-50, 80)
+            andar(60)
+            
+        if  lancamento == 3:
+
+             andar(-47)
+             curva(90)
+             andar(-31, 167)
+             andar(15)
+             curva(-75)
+             andar(55) 
+
+
+        if lancamento == 4:
+
+            mover.curve(1000, -25)
+            andar(37)
+            mover.curve(-1150, -10)
+            andar(-45)
+            
+        if lancamento == 5:
+
+
+            andar(12.5)
+            mover.curve(200, 90)
+            andar(90)
+            curva(-110)
+            curva(130)
+            andar(40)
+
+                
+
+            
+     
+            
