@@ -16,8 +16,6 @@ numero = 1
 lancamento = 1
 hub.system.set_stop_button(Button.BLUETOOTH)
 
-direita1 = 1
-
 def andar(distancia, velocidade = 300):
     mover.settings(velocidade, 900, 230, 300)
     mover.straight(distancia*10)
@@ -73,7 +71,7 @@ while numero == 1:
 
         if lancamento == 0:
 
-            andar(10000)
+            mover.drive(1000, 0)
 
         if lancamento == 1:
 
@@ -83,17 +81,27 @@ while numero == 1:
             mover.curve(-72, -190)
             garraD(7000, 2000)
             andar(-70)
+            mover.stop()
 
         if lancamento == 2:
 
             andar(63)
             mover.curve(200, -45)
             mover.curve(-270, 48)
-            andar(15)
-            andar(-5)
-            mover.curve(-50, 80)
-            andar(60)
-            
+            andar(14)
+            curva(-90)
+            andar(-49) 
+            andar(10)
+            curva(-90)
+            andar(-2.5)
+            garraE(-4000, 2000)
+            andar(-3)
+            garraE(4000, 2000)
+            mover.curve(150, 100)
+            andar(80)
+            mover.stop()
+
+
         if  lancamento == 3:
 
              andar(-47)
@@ -102,6 +110,7 @@ while numero == 1:
              andar(15)
              curva(-75)
              andar(55) 
+             mover.stop()
 
 
         if lancamento == 4:
@@ -110,6 +119,7 @@ while numero == 1:
             andar(37)
             mover.curve(-1150, -10)
             andar(-45)
+            mover.stop()
             
         if lancamento == 5:
 
@@ -120,9 +130,4 @@ while numero == 1:
             curva(-110)
             curva(130)
             andar(40)
-
-                
-
-            
-     
-            
+            mover.stop()
