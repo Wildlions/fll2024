@@ -1,0 +1,44 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch, multitask
+
+hub = PrimeHub()
+
+tempo = StopWatch()
+hub = PrimeHub()
+direito = Motor(Port.A)
+esquerdo = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+garra_esq = Motor(Port.F, Direction.COUNTERCLOCKWISE)
+garra_dir = Motor(Port.D)
+mover = DriveBase(esquerdo, direito, 54, 76)
+mover.use_gyro(True)
+hub.system.set_stop_button(Button.BLUETOOTH)
+sensoresq = ColorSensor(Port.E)
+sensordir = ColorSensor(Port.B)
+
+def andar(distancia, velocidade = 350):
+    mover.settings(velocidade, 900, 230, 300)
+    mover.straight(distancia*10)
+
+def curva(graus, velocidade = 200):
+    mover.settings(50, 600, 130, velocidade)
+    mover.turn(graus)
+    
+def garraD(velocidade, tempo):
+    garra_dir.run_time(velocidade, tempo)
+
+def garraE(velocidade, tempo):
+    garra_esq.run_time(velocidade, tempo)
+    
+def esperar(tempo):
+    mover.stop()
+    wait(tempo*1000)
+    mover.stop()
+
+#começo
+
+garraD(500, 2000)
+garraE(500, 2000)
+andar(500, 2000)
