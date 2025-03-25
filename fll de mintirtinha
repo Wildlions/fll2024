@@ -101,8 +101,12 @@ while numero == 1:
             garraE(-4000, 2000)
             andar(-3)
             garraE(4000, 2000)
-            mover.curve(150, 100)
-            andar(80)
+            mover.curve(100, 115)
+            garraE(-4000, 2000)
+            arco(100, -105)
+            garraE(450, 4000)
+
+            
             mover.stop()
 
 
