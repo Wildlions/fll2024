@@ -29,9 +29,8 @@ def garraD(velocidade, tempo):
 
 def garraE(velocidade, tempo):
     garra_esq.run_time(velocidade, tempo)
-    
-def arco(raio, graus):
 
+def arco(raio, graus):
     mover.curve(raio, graus)
 
 def esperar(tempo):
@@ -97,17 +96,20 @@ while numero == 1:
             andar(-49) 
             andar(10)
             curva(-88)
-            andar(-2.9)
+            andar(-3.1)
             garraE(-4000, 2000)
             andar(-3)
             garraE(4000, 2000)
             mover.curve(100, 115)
             garraE(-4000, 2000)
             arco(115, -105)
-            garraE(450, 3300)
-            andar(-20)
+            garraE(4500, 3300)
+            arco(-200 -20)
             garraE(-4500, 1500)
-            arco(600, -40) 
+            arco(500, -42) 
+            andar(12)
+            garra(4000, 1300)
+            
 
             
             mover.stop()
@@ -115,12 +117,8 @@ while numero == 1:
 
         if  lancamento == 3:
 
-             andar(-47)
-             curva(90)
-             andar(-31, 167)
-             andar(15)
-             curva(-75)
-             andar(55) 
+             arco(-350, 38)
+             arco(-120, -47)
              mover.stop()
 
 
@@ -145,7 +143,35 @@ while numero == 1:
 
         if lancamento == 6:
 
-            curva(-50)
-            andar(-7)
-            arco(-370, -140)
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            arco(170, 90)
+            arco(400, 90)
+            arco(170, 90)
+            arco(400, 90)
+
+            
             mover.stop()
