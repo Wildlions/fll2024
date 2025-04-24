@@ -117,17 +117,37 @@ while numero == 1:
 
         if  lancamento == 3:
 
-             arco(-350, 38)
-             arco(-120, -47)
+#
+             arco(-480, 38)
+             arco(-140, -60)
+             arco(-120, 55)
+             arco (-80, -82)
+             andar(-12)
+             arco(120, -50)
+             andar(60)
              mover.stop()
 
 
         if lancamento == 4:
 
-            mover.curve(1000, -25)
-            andar(37)
-            mover.curve(-1150, -10)
-            andar(-45)
+            arco(210, -45)
+            andar(43.5)
+            andar(-20)
+            garraD(4000, 1900)
+            garraD(-4000, 620)
+            arco(150, 83)
+            andar(6)
+            garraD(-4000, 1600)
+            curva(38)
+            garraD(4000, 1749)
+            andar(-13)
+            garraD(-4000, 1999)
+            arco(140, -45)
+            garraE(-4000, 1700)
+            arco(195, 53)
+            garraE(4000, 1500)
+            andar(-8)
+
             mover.stop()
             
         if lancamento == 5:
@@ -143,35 +163,5 @@ while numero == 1:
 
         if lancamento == 6:
 
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
-            arco(170, 90)
-            arco(400, 90)
-            arco(170, 90)
-            arco(400, 90)
-
+            wait(100)
             
-            mover.stop()
