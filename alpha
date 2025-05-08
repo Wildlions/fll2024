@@ -96,26 +96,26 @@ while numero == 1:
             
             andar(64.3)
             arco(150, -45)
-            andar(5)
-            arco(-190, 55)
-            
-            andar(7.7, 80)
+            andar(5)# fez o tubarão 
+            andar(-2)
+            arco(-190, 56)
+            andar(9.7, 80)
             andar(-4.1)
             curva(-90)
             andar(-35)
-            andar(12.3)
-            curva(-78)
-            andar(-3)
-            garraE(-4000,  2000)
-            garraE(4000, 1900)
+            andar(10.8)
+            curva(-72)
+            andar(-1)
+            garraE(-4000, 1300)
+            garraE(4000, 1500)
+            andar(-2)
             curva(80)
-            garraE(-4000, 1850)
-            andar(26)
-            arco(198, -74)
-            arco(500, 8)
+            garraE(-4000, 1800)
+            andar(25)
+            arco(230, -75)
+            arco(540, 4)
             andar(17, 70)
-            
-
-
-
+            arco(-620, -60)
+            andar(40)
+            andar(-40)
             mover.stop()
